@@ -9,7 +9,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 import evanUtils as eU
 
 # This problem is asking for the lcm of the first n integers, the following contstructive algorithm
-# adds new prime bases as they are found
+# multiplies in new prime bases as they are found
 
 def lcmTo(n):
     i = 1
@@ -22,4 +22,4 @@ def lcmTo(n):
     return lcm
 
 # Solves the problem:
-print(lcmTo(2))
+print(lcmTo(20))
