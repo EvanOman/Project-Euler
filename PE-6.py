@@ -26,7 +26,7 @@ Find the difference between the sum of the squares of the first one hundred natu
 
     * Sum of squares:       n(n+1)(2n+1)/6
     * Square of the sum:    (n(n+1)/2)^2
-
+0
 """
 
 def sumOfSq(n):
