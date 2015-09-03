@@ -25,4 +25,4 @@ def sumPrimesTo(n):
     return pSum
 
 
-print sumPrimesTo(20000002000000) # Gives the answer : 142913828922
+print sumPrimesTo(2000000) # Gives the answer : 142913828922
