@@ -38,7 +38,6 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 # Gets all of the horizontal chunks of length chunkLength from the grid
 def getHorizontalChunks(grid, chunkLength):
     n = chunkLength
-    chunks = []
     return [row[i:i+n] for row in grid for i in range(len(row) - (n-1))]
 
 # Gets all of the vertical chunks of length chunkLength from the grid
