@@ -3,7 +3,8 @@ import csv
 
 def getHorizontalChunks(grid, chunkLength):
     n = chunkLength
-    return [row[i:i+n] for row in grid for i in range(len(row) - (n-1))]
+    chunks = []
+    return [[(row[ind], ind, ind+n) for ind in range(i, i + n)] for row in grid for i in range(len(row) - (n-1))]
 
 def getVerticalChunks(grid, chunkLength):
     return getHorizontalChunks(grid.T, chunkLength)
@@ -17,7 +18,7 @@ def getForwardDiagChunks(grid, chunkLength):
     # Gathering the lower triangle forward diagonals is the same on the transpose
     diags += getUpperForwardDiags(grid.T)
 
-    return getChunkFromDiags(diags, chunkLength)
+    return getChunksFromDiags(diags, chunkLength)
 
 def getUpperForwardDiags(grid):
     diags = []
@@ -69,7 +70,9 @@ grid = getGrid()
 # Want to get all of the chunks of length 4
 chunks = getAllChunks(grid, 4)
 
-# Now we want to sort by the product of each chunk
+# Now we want to grab the max element by the product of each chunk
+maxChunk = max(chunks, key = lambda chunk: prod([tup[0] for tup in chunk]))
 
+prodMax = prod([tup[0] for tup in maxChunk])
 
-
+print "The max chunk is %s with product %s" % (maxChunk, prodMax)
